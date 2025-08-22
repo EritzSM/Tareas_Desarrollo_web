@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Combate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Juego de Combate por Turnos</h1>
+        
+        <div class="turn-info">
+            <p id="turnIndicator">Seleccionando jugador inicial...</p>
+        </div>
+
+        <div class="players">
+            <div class="player" id="player1">
+                <h2>Jugador 1</h2>
+                <div class="health">
+                    <p>Vida: <span id="health1Text">100</span>/100</p>
+                    <div class="health-bar">
+                        <div class="health-fill" id="health1Bar"></div>
+                    </div>
+                </div>
+                <button id="attackBtn1" onclick="attack(1)">Atacar</button>
+            </div>
+
+            <div class="player" id="player2">
+                <h2>Jugador 2</h2>
+                <div class="health">
+                    <p>Vida: <span id="health2Text">100</span>/100</p>
+                    <div class="health-bar">
+                        <div class="health-fill" id="health2Bar"></div>
+                    </div>
+                </div>
+                <button id="attackBtn2" onclick="attack(2)">Atacar</button>
+            </div>
+        </div>
+
+        <div id="winnerMessage"></div>
+        
+        <button class="restart-btn" onclick="restartGame()">Reiniciar Juego</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
