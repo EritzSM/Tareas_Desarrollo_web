@@ -1,0 +1,43 @@
+<div class="game-container">
+  <h1>Juego de Combate por Turnos</h1>
+
+  <div class="turn-info">
+    <p>{{ turnMessage }}</p>
+  </div>
+
+  <div class="players">
+    <div class="player" [class.active]="currentPlayer === 1">
+      <h2>Jugador 1</h2>
+      <div class="health">
+        <p>Vida: {{ player1Health }}/100</p>
+        <div class="health-bar">
+          <div class="health-fill" [style.width.%]="player1Health"></div>
+        </div>
+      </div>
+      <button (click)="attack(1)" [disabled]="currentPlayer !== 1 || gameEnded">
+        Atacar
+      </button>
+    </div>
+
+    <div class="player" [class.active]="currentPlayer === 2">
+      <h2>Jugador 2</h2>
+      <div class="health">
+        <p>Vida: {{ player2Health }}/100</p>
+        <div class="health-bar">
+          <div class="health-fill" [style.width.%]="player2Health"></div>
+        </div>
+      </div>
+      <button (click)="attack(2)" [disabled]="currentPlayer !== 2 || gameEnded">
+        Atacar
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="winnerMessage" class="winner-message">
+    {{ winnerMessage }}
+  </div>
+
+  <button class="restart-btn" (click)="restartGame()">
+    Reiniciar Juego
+  </button>
+</div>
